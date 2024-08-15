@@ -122,9 +122,17 @@ vsim -gui testbench -voptargs="+acc"
 
 **Неожиданно сталкиваемся с ошибками.** Проблема в дизайне? Не думаю.
 
-<p align="center">
-<img src="./pic/log.png" width=550></img>
-</p>
+```
+run -all
+# ** Error:                   50 Real: 07, Expected: 04
+#    Time: 50 ns  Scope: testbench File: testbench.sv Line: 55
+# ** Error:                   90 Real: 01, Expected: 04
+#    Time: 90 ns  Scope: testbench File: testbench.sv Line: 55
+# ** Error:                  170 Real: 07, Expected: 03
+#    Time: 170 ns  Scope: testbench File: testbench.sv Line: 55
+# ** Note: $stop    : testbench.sv(26)
+#    Time: 190 ns  Iteration: 1 Instance: /testbench
+```
 
 Смотрим временную диаграмму. Перемещаемся в момент времени 50ns, потому что согласно логу выше первая ошибка была обнаружена именно в этот момент времени.
 
@@ -280,9 +288,11 @@ end
 
 Сохраняем изменения и запускаем симуляцию. Ошибки пропали.
 
-<p align="center">
-<img src="./pic/log2.png" width=550></img>
-</p>
+```
+run -all
+# ** Note: $stop    : testbench.sv(26)
+#    Time: 190 ns  Iteration: 1 Instance: /testbench
+```
 
 Код исправленного окружения размещен в файле [`testbench.sv`](./testbench.sv).
 
