@@ -122,7 +122,9 @@ vsim -gui testbench -voptargs="+acc"
 
 **Неожиданно сталкиваемся с ошибками.** Проблема в дизайне? Не думаю.
 
-<center><img src="./pic/log.png" width=550></img></center>
+<p align="center">
+<img src="./pic/log.png" width=550></img>
+</p>
 
 Смотрим временную диаграмму. Перемещаемся в момент времени 50ns, потому что согласно логу выше первая ошибка была обнаружена именно в этот момент времени.
 
@@ -138,7 +140,9 @@ vsim -gui testbench -voptargs="+acc"
 
 Обратим внимание на два региона: **Active** и **NBA**.
 
-<center><img src="./pic/event_region.png" width=550></img></center>
+<p align="center">
+<img src="./pic/event_region.png" width=550></img>
+</p>
 
 Применительно к присваиваниям: все блокирующие (=) происходят в случайном порядке в регионе Active, все неблокирующие (<=) тоже в случайном порядке в NBA.
 
@@ -276,7 +280,9 @@ end
 
 Сохраняем изменения и запускаем симуляцию. Ошибки пропали.
 
-<center><img src="./pic/log2.png" width=550></img></center>
+<p align="center">
+<img src="./pic/log2.png" width=550></img>
+</p>
 
 Код исправленного окружения размещен в файле [`testbench.sv`](./testbench.sv).
 
