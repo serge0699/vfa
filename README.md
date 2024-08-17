@@ -4,8 +4,8 @@
 
 Список статей:
 
-- [SystemVerilog и виртуальный интерфейс. Связь статического и динамического мира симуляции.](./articles/virtual_intf/README.md);
-- [Верификация на SystemVerilog. "Я же все правильно написал, почему не работает?" или "гонки" сигналов на симуляции.](./articles/race_condition/README.md);
-- [Кодовое покрытие в функциональной верификации: все говорят, но никто не использует.](./articles/code_coverage/README.md);
-- [SystemVerilog IEEE 1800-2023. Обзор нововведений.](./articles/sv_ieee_2023/README.md).
+- [SystemVerilog и виртуальный интерфейс. Связь статического и динамического мира симуляции.](./articles/virtual_intf/README.md)
+- [Верификация на SystemVerilog. "Я же все правильно написал, почему не работает?" или "гонки" сигналов на симуляции.](./articles/race_condition/README.md)
+- [Кодовое покрытие в функциональной верификации: все говорят, но никто не использует.](./articles/code_coverage/README.md)
+- [SystemVerilog IEEE 1800-2023. Обзор нововведений.](./articles/sv_ieee_2023/README.md)
 
