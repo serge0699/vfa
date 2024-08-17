@@ -1,0 +1,6 @@
+[book]
+authors = ["Sergey Chusov"]
+language = "ru"
+multilingual = true
+src = "./"
+title = "Verification For All"
