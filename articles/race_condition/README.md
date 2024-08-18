@@ -10,7 +10,7 @@
 
 Итак, имеем **дизайн**:
 
-```SystemVerilog
+```verilog
 module sum (
     input  logic       clk,
     input  logic [7:0] a,
@@ -31,7 +31,7 @@ endmodule
 
 Создадим нужные сигналы и подключим модуль.
 
-```SystemVerilog
+```verilog
 logic       clk;
 logic [7:0] a;
 logic [7:0] b;
@@ -47,7 +47,7 @@ sum DUT (
 
 Сгенерируем тактовый сигнал. `forever` - бесконечный цикл.
 
-```SystemVerilog
+```verilog
 initial begin
     clk <= 0;
     forever #10 clk <= ~clk;
@@ -56,7 +56,7 @@ end
 
 Подадим входные воздействия. 10 раз (`repeat(10)`) значение в интервале от 0 до 5 (`$urandom_range(0,5)`).
 
-```SystemVerilog
+```verilog
 initial begin
     repeat(10) begin
         @(posedge clk);
@@ -69,7 +69,7 @@ end
 
 Реализуем логирование данных. Создаем `mailbox`, куда каждый такт отправляем данные с входных и выходных портов в виде структуры `packet`.
 
-```SystemVerilog
+```verilog
 typedef struct {
     logic [7:0] a;
     logic [7:0] b;
@@ -92,7 +92,7 @@ end
 
 Осталось циклически проводить проверку каждый такт. Забираем их `mailbox` пакеты и сравниваем, что результат текущего такта (`c`) равен сумме операндов прошлого такта (`a` и `b`).
 
-```SystemVerilog
+```verilog
 initial begin
     mbx.get(p1);
     forever begin
@@ -156,7 +156,7 @@ run -all
 
 Когда я говорю "в случайном порядке", я имею в виду порядок относительно независимых процессов. То есть, если у вас есть два `initial`-блока, которые выполняются совместно:
 
-```SystemVerilog
+```verilog
 initial begin
     a = 10;
     a = 20;
@@ -194,7 +194,7 @@ end
 
 Мы имеем интересную ситуацию. Совместно у нас исполняются `initial`-блоки генерации входных воздействий и мониторинга.
 
-```SystemVerilog
+```verilog
 initial begin
     repeat(10) begin
         @(posedge clk);
@@ -273,7 +273,7 @@ end
 
 Так, в чем проблема - разобрались. Остался вопрос: как её решить? На самом деле очень просто. Нужно помнить одно важное правило: **при взаимодействии с портами тестируемого последовательностного устройства используется неблокирующее присваивание (`<=`)**.
 
-```SystemVerilog
+```verilog
 initial begin
     repeat(10) begin
         @(posedge clk);

@@ -22,7 +22,7 @@ P.S. Сопроводительные материалы (в основном к
 
 Конвертер двоичного кода (вход `binary`) в one-hot (выход `onehot`):
 
-```SystemVerilog
+```verilog
 module binary_to_onehot (
     input  logic [1:0] binary,
     output logic [3:0] onehot
@@ -44,7 +44,7 @@ endmodule
 
 Напишем простой тестовый сценарий. Просто будем подавать на входы значения.
 
-```SystemVerilog
+```verilog
 module testbench;
 
     logic [1:0] binary;
@@ -91,7 +91,7 @@ vsim testbench -coverage -voptargs="+cover=s+/testbench/DUT" -do "run -a;"
 
 Так, ну список возможных выражений вполне понятен. Модуль состоит из одного `always_comb` блока. Внутри него `case`, в зависимости от входного значения, формирует выходное.
 
-```SystemVerilog
+```verilog
     // ...
     
     always_comb begin
@@ -110,7 +110,7 @@ vsim testbench -coverage -voptargs="+cover=s+/testbench/DUT" -do "run -a;"
 
 Присвоение определенного значения выхода `onehot` выполняется в зависимости от значения на входе `binary`. `2'b00` соответствует `4'b0001`, `2'b01` соответствует `4'b0010` и так далее. У нас выполнилось: `2'b01: onehot = 4'b0010;`, `2'b11: onehot = 4'b1000;`. Ну так понятно, почему! Мы ведь в нашем тестбенче (см. выше) подали значения : `2'b01`, `2'b11`:
 
-```SystemVerilog
+```verilog
     // ...
 
     initial begin
@@ -136,7 +136,7 @@ vsim testbench -coverage -voptargs="+cover=s+/testbench/DUT" -do "run -a;"
 
 Можем считать, что это некий декодер, который в зависимости от входа s определяет некоторые значения выходов `a`, `b` и `c`.
 
-```SystemVerilog
+```verilog
 module decoder (
     input  logic [1:0] s,
     output logic       a,
@@ -173,7 +173,7 @@ endmodule
 
 Тут все тоже тривиально. Подаем на входы значения.
 
-```SystemVerilog
+```verilog
 module testbench;
 
     logic [1:0] s;
@@ -228,7 +228,7 @@ vsim testbench -coverage -voptargs="+cover=sb+/testbench/DUT" -do "run -a;"
 
 Давайте вернемся к коду тестируемого модуля.
 
-```SystemVerilog
+```verilog
     // ...
         
     if( s[0] ) begin
@@ -280,7 +280,7 @@ vsim testbench -coverage -voptargs="+cover=sb+/testbench/DUT" -do "run -a;"
 
 Например, если тестируется модуль конвертера:
 
-```SystemVerilog
+```verilog
 module testbench;
 
     logic [1:0] binary;
@@ -304,7 +304,7 @@ endmodule
 
 То для покрытия значений входа `binary` нужно внутри модуля `testbench` написать:
 
-```SystemVerilog
+```verilog
     // ...
     
     covergroup dut_cg @(binary);
@@ -398,7 +398,7 @@ vsim testbench -coverage -voptargs="+cover=sb+/testbench/DUT" -do "run -a;"
 
 Вернемся к тестированию декодера:
 
-```SystemVerilog
+```verilog
 module decoder (
     input  logic [1:0] s,
     output logic       a,
@@ -552,7 +552,7 @@ sys     0m0.086s
 
 Исходный код:
 
-```SystemVerilog
+```verilog
 module fsm (
 
     input  logic clk,
@@ -607,7 +607,7 @@ endmodule
 
 Здесь осознанно не привожу полный код, чтобы не перегружать повествование. Обозначу только, что `set_inputs()` отвечает за выставление значений на входы, а `check_ouputs()` за проверку значений на выходах, а `wait_clocks()` за ожидание заданного количества положительных фронтов тактового сигнала.
 
-```SystemVerilog
+```verilog
 module testbench;
 
     // ...
@@ -697,7 +697,7 @@ vsim testbench -coverage -voptargs="+acc +cover=f+/testbench/DUT" -do "run -a;"
 
 Допишем тестовый сценарий для инициации нужных переходов:
 
-```SystemVerilog
+```verilog
     // ...
 
     // Generate
@@ -741,7 +741,7 @@ vsim testbench -coverage -voptargs="+acc +cover=f+/testbench/DUT" -do "run -a;"
 
 Исправляем RTL:
 
-```SystemVerilog
+```verilog
     assign write = state_ff == WRITE;
 ```
 

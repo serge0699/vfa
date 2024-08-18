@@ -14,7 +14,7 @@
 
 Например:
 
-```SystemVerilog
+```verilog
 class base;
 
     enum {red, green, blue} color;
@@ -39,7 +39,7 @@ endclass
 
 Например:
 
-```SystemVerilog
+```verilog
 class derived extends base;
     
     bit d;
@@ -72,7 +72,7 @@ endclass
 
 Например:
 
-```SystemVerilog
+```verilog
 int A [] = {1,2,3}, B [] = {2,3,5}, C [$];
 
 // Add one to each element of an array
@@ -88,7 +88,7 @@ C = A.map(a) with (a + B[a.index]); // {4,6,9}
 
 Например:
 
-```SystemVerilog
+```verilog
 int A [] = {2,3,4}, B [] = {2,3,5};
 // Element by element comparison
 bit C [];
@@ -107,7 +107,7 @@ C = A.map(a) with (a == B[a.index]); // {1,1,0}
 
 В старой версии стандарта:
 
-```SystemVerilog
+```verilog
 `ifdef A
     `ifdef B
         // code for AND condition
@@ -117,7 +117,7 @@ C = A.map(a) with (a == B[a.index]); // {1,1,0}
 
 В новой версии стандарта:
 
-```SystemVerilog
+```verilog
 `ifdef (A && B)
     // code for AND condition
 `endif
@@ -135,14 +135,14 @@ C = A.map(a) with (a == B[a.index]); // {1,1,0}
 
 Например:
 
-```SystemVerilog
+```verilog
 $display("Humpty Dumpty sat on a wall.\n\
 Humpty Dumpty had a great fall.");
 ```
 
 Эквивалентно:
 
-```SystemVerilog
+```verilog
 $display("""Humpty Dumpty sat on a wall.
 Humpty Dumpty had a great fall. """);
 ```
@@ -151,14 +151,14 @@ Humpty Dumpty had a great fall. """);
 
 Например:
 
-```SystemVerilog
+```verilog
 $display("Humpty Dumpty sat on a \"wall\".\n\
 Humpty Dumpty had a great fall.");
 ```
 
 Эквивалентно:
 
-```SystemVerilog
+```verilog
 $display("""Humpty Dumpty sat on a "wall".
 Humpty Dumpty had a great fall. """);
 ```
@@ -167,7 +167,7 @@ Humpty Dumpty had a great fall. """);
 
 А что, если:
 
-```SystemVerilog
+```verilog
 function int add(int a, int b);
     """
         This function adds two integers.
@@ -187,7 +187,7 @@ endfunction
 
 Рассмотрим одну из проблем определения функционального покрытия для чисел с плавающей точкой. Разделы покрытия представляют собой конечные наборы значений. Для целых чисел такой набор может быть однозначно определен.
 
-```SystemVerilog
+```verilog
 int a;
 covergroup a_cg;
     a_cp: coverpoint a {
@@ -198,7 +198,7 @@ endgroup
 
 Числа же с плавающей точкой хранятся в памяти с некоторой точностью, что приводит к тому, что два разных числа могут быть представлены одним и тем же набором бит. Такая особенность может являться причиной дублирования значений в разделах покрытия, а также пересечения разделов покрытия.
 
-```SystemVerilog
+```verilog
 real a;
 covergroup a_cg;
     a_cp: coverpoint a {
@@ -211,7 +211,7 @@ endgroup
 
 Пример:
 
-```SystemVerilog
+```verilog
 real a;
 parameter real VALUE = 50.0;
 
@@ -238,7 +238,7 @@ endgroup
 
 В большинстве симуляторов SystemVerilog в настоящее время поддерживается выполнение следующего примера:
 
-```SystemVerilog
+```verilog
 module test;
     class my_class;
         function void print();
@@ -267,7 +267,7 @@ Inside my_class!
 
 Например:
 
-```SystemVerilog
+```verilog
 class A;
     int member=123;
 endclass
@@ -305,7 +305,7 @@ endmodule
 
 Например:
 
-```SystemVerilog
+```verilog
 initial begin
     for (int j = 1; j <= 3; ++j) begin
       fork
@@ -328,7 +328,7 @@ end
 
 А вот другой пример:
 
-```SystemVerilog
+```verilog
 module test;
 
     function void print(ref logic arg);
@@ -363,7 +363,7 @@ The task or function 'print' with ref argument 'arg' must be automatic.
 
 Пример:
 
-```SystemVerilog
+```verilog
 module test;
 
     function void print(ref static logic arg);
