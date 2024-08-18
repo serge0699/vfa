@@ -37,7 +37,7 @@ jobs:
           chmod +x .github/prepare.sh
           .github/prepare.sh
           mkdir bin
-          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.34/mdbook-v0.4.34-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
           bin/mdbook build
       - name: Setup Pages
         id: pages
