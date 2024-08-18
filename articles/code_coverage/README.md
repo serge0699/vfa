@@ -126,7 +126,7 @@ vsim testbench -coverage -voptargs="+cover=s+/testbench/DUT" -do "run -a;"
 
 которые и привели к выполнению соответствующих участков кода.
 
-[-> GitHub примера](./src/1)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/1)
 
 ## А если посложнее
 
@@ -258,7 +258,7 @@ vsim testbench -coverage -voptargs="+cover=sb+/testbench/DUT" -do "run -a;"
 
 А не выполнился только лишь переход `if-begin`, потому что в тестовом сценарии `s[0]` никогда не принимало значение `1`. А что нам говорит процедурное покрытие? Верно, не выполнились выражения, которые должны были бы выполниться при переходе `if-begin`.
 
-[-> GitHub примера](./src/2)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/2)
 
 ## Немного теории
 
@@ -324,7 +324,7 @@ endmodule
 
 То есть в ходе симуляции вход `binary` принимал 2 из 4 возможных значений. При этом мы сами описали, что хотим отслеживать именно его. Здесь еще раз замечу, что для сбора функционального покрытия, верификатор должен обладать знаниями соответствующего синтаксиса SystemVerilog.
 
-[-> GitHub примера](./src/3)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/3)
 
 ### Сбор кодового покрытия
 
@@ -453,7 +453,7 @@ vsim testbench -coverage -voptargs="+cover=sb+/testbench/DUT" -do "run -a; cover
 vsim -viewcov cov.ucdb
 ```
 
-[-> GitHub примера](./src/2)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/2)
 
 Но и это еще не все. Также мы можем сформировать детализированный текстовый отчет или HTML отчет, для просмотра которого не нужен будет сам симулятор. Для этого следует добавить к команде запуска `coverage report -details -file <имя-файла>.txt` для текстового формата и `coverage report -html -details -htmldir <имя-директории>` для HTML формата.
 
@@ -477,7 +477,7 @@ nano cov.txt
 firefox htmlcov/index.html
 ```
 
-[-> GitHub примеров](./src/2)
+[-> GitHub примеров](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/2)
 
 Пример HTML-отчета (но лично я предпочитаю текстовый):
 
@@ -509,7 +509,7 @@ sys     0m0.086s
 
 Машина одна и та же.
 
-[-> GitHub примеров](./src/7)
+[-> GitHub примеров](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/7)
 
 Так что при **сборе кодового покрытия внимательно настраивайте области, для которых хотите его осуществлять**, стараясь минимизировать работу симулятора.
 
@@ -691,7 +691,7 @@ vsim testbench -coverage -voptargs="+acc +cover=f+/testbench/DUT" -do "run -a;"
 <img src="./pic/analysis6.png" width=550></img>
 </p>
 
-[-> GitHub примера](./src/4)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/4)
 
 ### Исправляемся
 
@@ -737,7 +737,7 @@ vsim testbench -coverage -voptargs="+acc +cover=f+/testbench/DUT" -do "run -a;"
 
 Все переходы были совершены.
 
-[-> GitHub примера](./src/5)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/5)
 
 Исправляем RTL:
 
@@ -758,7 +758,7 @@ vsim testbench -coverage -voptargs="+acc +cover=f+/testbench/DUT" -do "run -a;"
 
 Мы прекрасны!
 
-[-> GitHub примера](./src/6)
+[-> GitHub примера](https://github.com/serge0699/vfa/tree/master/articles/code_coverage/src/6)
 
 ## Заключение
 
