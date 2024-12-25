@@ -190,7 +190,7 @@ endclass
    `m_uvm_get_type_name_func(T) \
 ```
 
-Видим, что макрос `uvm_component_utils(T)` параметризован переменной `T` и "раскрывается" в два других макроса: `m_uvm_component_registry_internal(T,T)` и `m_uvm_get_type_name_func(T)`. Их исходный код приведен ниже.
+Видим, что макрос `uvm_component_utils(T)` параметризован переменной `T` и раскрывается в два других макроса: `m_uvm_component_registry_internal(T,T)` и `m_uvm_get_type_name_func(T)`. Их исходный код приведен ниже.
 
 ```verilog
 `define m_uvm_component_registry_internal(T,S) \
