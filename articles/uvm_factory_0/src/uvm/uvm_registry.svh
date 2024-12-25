@@ -6,7 +6,6 @@
 // симуляции. Указатель на единственный эк-
 // земпляр можно получить при помощи ~get()~.
 // Тип наследуется от ~uvm_object_wrapper~.
-// См. файл uvm_factory.svh.
 class uvm_component_registry #(
     type   T     = uvm_component,
     string Tname = "<unknown>"
@@ -45,8 +44,7 @@ class uvm_component_registry #(
     // Метод создания компонента. В методе вызывается
     // метод фабрики ~create_component_by_type()~, вы-
     // зов которого приводит к поиску возможных пере-
-    // определений типа ~this_type~. См. реализацию
-    // метода в uvm_factory.sv.
+    // определений типа ~this_type~.
     static function T create(
         string        name,
         uvm_component parent
