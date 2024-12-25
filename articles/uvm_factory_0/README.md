@@ -80,7 +80,7 @@
 
 ## SystemVerilog и параметризация классов типами
 
-Перед погружением в исходный код UVM необходимо вспомнить одну из особенностей SystemVerilog. А именно — **возможность параметризации класса типом**. Пример параметризованного таким образом класса представлен в файле `src/test/test_pkg.sv`.
+Перед погружением в исходный код UVM необходимо вспомнить одну из особенностей SystemVerilog. А именно — **возможность параметризации класса типом**. Пример параметризованного таким образом класса представлен в файле [`src/test/test_pkg.sv`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_0/src/test/test_pkg.sv).
 
 ```verilog
 class my_wrapper #(type T);
@@ -115,7 +115,7 @@ class my_new_awesome_class extends my_awesome_class;
 endclass
 ```
 
-Обратите внимание, что так же, как и с "классическими" параметрами, `my_wrapper#(my_awesome_class)` и `my_wrapper#(my_new_awesome_class)` являются разными типами. Пример использования параметризованного класса представлен в файле `src/test/tb_simple.sv`.
+Обратите внимание, что так же, как и с "классическими" параметрами, `my_wrapper#(my_awesome_class)` и `my_wrapper#(my_new_awesome_class)` являются разными типами. Пример использования параметризованного класса представлен в файле [`src/test/tb_simple.sv`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_0/src/test/tb_simple.sv).
 
 ```verilog
 initial begin
@@ -138,7 +138,7 @@ end
 # Hello from 'my_new_awesome_class'!
 ```
 
-Для запуска примера при помощи QuestaSim или Verilator в директории `src` необходимо выполнить скрипты `run_questa.sh` и `run_verilator.sh` соответственно (с аргументом `tb_simple`):
+Для запуска примера при помощи QuestaSim или Verilator в директории [`src`](https://github.com/serge0699/vfa/tree/master/articles/uvm_factory_0/src) необходимо выполнить скрипты `run_questa.sh` и `run_verilator.sh` соответственно (с аргументом `tb_simple`):
 
 ```bash
 run_questa.sh tb_simple
@@ -180,7 +180,7 @@ class base_test extends uvm_component;
 endclass
 ```
 
-Что такое **регистрация типа** и что же кроется за представленным макросом? Рассмотрим исходный код файла, в котором определен `uvm_component_utils`. Для этого откроем файл `src/uvm/uvm_object_defines.svh`:
+Что такое **регистрация типа** и что же кроется за представленным макросом? Рассмотрим исходный код файла, в котором определен `uvm_component_utils`. Для этого откроем файл [`src/uvm/uvm_object_defines.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_0/src/uvm/uvm_object_defines.svh):
 
 ```verilog
 `define uvm_component_utils(T) \
@@ -244,7 +244,7 @@ endclass
 
 ### Proxy-класс регистрации
 
-Рассмотрим исходный код файла, в котором определен тип `uvm_component_registry`. Для этого откроем файл `src/uvm/uvm_registry.svh`:
+Рассмотрим исходный код файла, в котором определен тип `uvm_component_registry`. Для этого откроем файл [`src/uvm/uvm_registry.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_0/src/uvm/uvm_registry.svh):
 
 ```verilog
 class uvm_component_registry #(
@@ -354,7 +354,7 @@ obj = factory.create_component_by_type(get(), name, parent);
 
 ## Класс сервисов UVM
 
-Рассмотрим исходный код файла, в котором определен тип `uvm_coreservice_t`.  Для этого откроем файл `src/uvm/uvm_coreservice.svh`:
+Рассмотрим исходный код файла, в котором определен тип `uvm_coreservice_t`.  Для этого откроем файл [`src/uvm/uvm_coreservice.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_0/src/uvm/uvm_coreservice.svh):
 
 ```verilog
 class uvm_coreservice_t;
