@@ -148,6 +148,8 @@ run_questa.sh tb_simple
 run_verilator.sh tb_simple
 ```
 
+Лог запуска будет выведен в консоль, а артефакты симуляции сохранены в директорию `src/out`.
+
 ## Создание компонентов в UVM
 
 ### Case study
