@@ -361,23 +361,23 @@ obj = factory.create_component_by_type(get(), name, parent);
 ```verilog
 class uvm_coreservice_t;
 
-	local static uvm_coreservice_t inst;
+    local static uvm_coreservice_t inst;
 
-	static function uvm_coreservice_t get();
-		if(inst == null) begin
-			inst = new();
+    static function uvm_coreservice_t get();
+        if(inst == null) begin
+            inst = new();
         end
-		return inst;
-	endfunction
+        return inst;
+    endfunction
 
     local uvm_factory factory;
 
     virtual function uvm_factory get_factory();
-	    if(factory == null) begin
-	    	factory = new();
-	    end 
-		return factory;
-	endfunction
+        if(factory == null) begin
+            factory = new();
+        end 
+        return factory;
+    endfunction
 
 endclass
 ```
