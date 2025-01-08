@@ -106,7 +106,7 @@ initial begin
 end
 ```
 
-Полный код окружения размещен в файле [`testbench.sv`](./testbench.sv).
+Полный код окружения размещен в файле [`testbench.sv`](https://github.com/serge0699/vfa/blob/master/articles/race_condition/src/testbench.sv).
 
 ## Запускаем
 
@@ -294,7 +294,7 @@ run -all
 #    Time: 190 ns  Iteration: 1 Instance: /testbench
 ```
 
-Код исправленного окружения размещен в файле [`testbench.sv`](./testbench.sv).
+Код исправленного окружения размещен в файле [`testbench_fixed.sv`](https://github.com/serge0699/vfa/blob/master/articles/race_condition/src/testbench_fixed.sv).
 
 Давайте сравним время `30ns` для ошибочного и справленного модулей тестирования. Сверху ошибочный модуль, снизу - исправленный.
 
