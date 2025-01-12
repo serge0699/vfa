@@ -7,3 +7,4 @@
 - [Кодовое покрытие в функциональной верификации.](articles/code_coverage)
 - [Обзор SystemVerilog IEEE 1800-2023.](articles/sv_ieee_2023)
 - [Demystifying UVM: Фабрика, часть 1.](articles/uvm_factory_0)
+- [Demystifying UVM: Фабрика, часть 1.](articles/uvm_factory_1)
