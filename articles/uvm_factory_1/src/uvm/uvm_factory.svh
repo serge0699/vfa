@@ -128,9 +128,9 @@ class uvm_factory;
         // который был переопределен запрашиваемый. Рекурсив-
         // ный поиск позволяет обрабатывать ситуации с мно-
         // жественными переопределениями, например, ~my_test~
-        // переопределен на ~my_new_test~, а ~my_new_type~
+        // переопределен на ~my_new_test~, а ~my_new_test~
         // переопределен на ~my_super_test~. В этом случае
-        // при вызове my_type::type_id::create() будет соз-
+        // при вызове my_test::type_id::create() будет соз-
         // дан объект типа ~my_super_test~. См. 5 пример в
         // файле tb_simple.sv.
         foreach (m_type_overrides[index]) begin
