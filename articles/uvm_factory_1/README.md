@@ -1,17 +1,17 @@
 # Demystifying UVM: Фабрика, часть 2
 
 - [Demystifying UVM: Фабрика, часть 2](#demystifying-uvm-фабрика-часть-2)
-  - [Вступление](#Вступление)
-    - [Цикл статей Demystifying UVM](#Цикл-статей-demystifying-uvm)
+  - [Вступление](#вступление)
+    - [Цикл статей Demystifying UVM](#цикл-статей-demystifying-uvm)
     - [Motivation или зачем это всё](#motivation-или-зачем-это-всё)
-    - [Необходимые знания](#Необходимые-знания)
-  - [Подсвечивание](#Подсвечивание)
-    - [Первая часть статьи](#Первая-часть-статьи)
-    - [Маршрут создания компонента UVM](#Маршрут-создания-компонента-uvm)
-  - [Класс фабрики UVM](#Класс-фабрики-uvm)
-    - [Первое касание](#Первое-касание)
-    - [Переопределение типов](#Переопределение-типов)
-    - [Создание компонентов](#Создание-компонентов)
+    - [Необходимые знания](#необходимые-знания)
+  - [Подсвечивание](#подсвечивание)
+    - [Первая часть статьи](#первая-часть-статьи)
+    - [Маршрут создания компонента UVM](#маршрут-создания-компонента-uvm)
+  - [Класс фабрики UVM](#класс-фабрики-uvm)
+    - [Первое касание](#первое-касание)
+    - [Переопределение типов](#переопределение-типов)
+    - [Создание компонентов](#создание-компонентов)
   - [Playground](#playground)
   - [To be continued...](#to-be-continued)
 
@@ -92,7 +92,7 @@ endclass
 
 ### Первое касание
 
-Рассмотрим исходный код файла, в котором определен тип `uvm_factory`. Для этого откроем файл `src/uvm/uvm_factory.svh`:
+Рассмотрим исходный код файла, в котором определен тип `uvm_factory`. Для этого откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh):
 
 ```verilog
 class uvm_factory;
@@ -196,7 +196,7 @@ endclass
 
 </details>
 
-Чтобы понять, почему пример выше функционирует именно таким образом, погрузимся в код UVM. Начнем разбор механизмов переопределения с метода `set_type_override()`. Для этого откроем файл `src/uvm/uvm_registry.svh`:
+Чтобы понять, почему пример выше функционирует именно таким образом, погрузимся в код UVM. Начнем разбор механизмов переопределения с метода `set_type_override()`. Для этого откроем файл [`src/uvm/uvm_registry.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_registry.svh):
 
 ```verilog
 class uvm_component_registry #(
@@ -229,7 +229,7 @@ endclass
 
 ![](./pic/uvm_factory_04.svg)
 
-Рассмотрим подробно реализацию метода `set_type_override_by_type()` фабрики UVM. Для этого вновь откроем файл `src/uvm/uvm_factory.svh`:
+Рассмотрим подробно реализацию метода `set_type_override_by_type()` фабрики UVM. Для этого вновь откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh)::
 
 ```verilog
 class uvm_factory;
@@ -337,7 +337,7 @@ endclass
 
 ### Создание компонентов
 
-Вернемся к методу создания компонентов в классе фабрики UVM `create_component_by_type()`. Для этого откроем файл `src/uvm/uvm_factory.svh`:
+Вернемся к методу создания компонентов в классе фабрики UVM `create_component_by_type()`. Для этого откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh)::
 
 ```verilog
 class uvm_factory;
