@@ -229,7 +229,7 @@ endclass
 
 ![](./pic/uvm_factory_04.svg)
 
-Рассмотрим подробно реализацию метода `set_type_override_by_type()` фабрики UVM. Для этого вновь откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh)::
+Рассмотрим подробно реализацию метода `set_type_override_by_type()` фабрики UVM. Для этого вновь откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh):
 
 ```verilog
 class uvm_factory;
@@ -337,7 +337,7 @@ endclass
 
 ### Создание компонентов
 
-Вернемся к методу создания компонентов в классе фабрики UVM `create_component_by_type()`. Для этого откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh)::
+Вернемся к методу создания компонентов в классе фабрики UVM `create_component_by_type()`. Для этого откроем файл [`src/uvm/uvm_factory.svh`](https://github.com/serge0699/vfa/blob/master/articles/uvm_factory_1/src/uvm/uvm_factory.svh):
 
 ```verilog
 class uvm_factory;
