@@ -13,7 +13,7 @@ module tb_simple;
         // Handle типа базового класса ~my_awesome_class~.
         my_awesome_class cl;
 
-        // Данный выхов ~create_some_class()~ вернет указатель
+        // Данный метод ~create_some_class()~ вернет указатель
         // на объект типа ~my_awesome_class~. См. реализацию
         // метода в файле test_pkg.sv.
         // Результатом вызова ~print()~ будет:
@@ -21,7 +21,7 @@ module tb_simple;
         cl = my_wrapper#(my_awesome_class)::create_some_class();
         cl.print();
 
-        // Данный выхов ~create_some_class()~ вернет указатель
+        // Данный метод ~create_some_class()~ вернет указатель
         // на объект типа ~my_new_awesome_class~. То есть handle
         // базового класса будет указывать на объект типа, нас-
         // ледованного от базового. Вызов ~print()~ приведет к
