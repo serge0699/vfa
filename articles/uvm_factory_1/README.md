@@ -471,11 +471,11 @@ endclass
 
 Поле `drv` будет указывать на объект типа `extended_2_apb_driver`.
 
-Первый вызов `set_type_override()` создаст и отправит в `m_type_overrides` запись о переопределении типа `apb_driver` на `extended_1_apb_driver`. Второй вызов `set_type_override()` создаст и отправит в `m_type_overrides` запись о переопределении типа `extended_1_apb_driver` на `extended_2_apb_driver`.
+Первый вызов `set_type_override()` создаст и отправит в `m_type_overrides` запись о переопределении типа `apb_driver` на `extended_1_apb_driver`. Второй вызов `set_type_override()` создаст и отправит в `m_type_overrides` запись о переопределении типа `extended_1_apb_driver` на `extended_2_apb_driver`. Таким образом, в очереди переопределений `m_type_overrides` будет содержаться две записи.
 
 Вызов `type_id::create()` приведет к вызову метода `create_component_by_type()`, который в свою очередь приведет к вызову `find_override_by_type()`, результатом которого будет указатель на proxy-класс для типа `extended_2_apb_driver`. Почему это так? Потому что сначала в `m_types_override` будет найдено переопределение типа `apb_driver` на тип `extended_1_apb_driver`, далее будет рекурсивно выполнен поиск для типа `extended_1_apb_driver` и будет найдено переопределение этого типа на `extended_2_apb_driver`.
 
-В завершение будет вызыван метод `create_component()` у proxy-класса для типа `extended_2_apb_driver`, который вернет указатель на объект этого типа. 
+В завершение будет вызыван метод `create_component()` у proxy-класса для типа `extended_2_apb_driver`, который вернет указатель на объект этого типа.
 
 Визуализация примера представлена на изображении ниже.
 
