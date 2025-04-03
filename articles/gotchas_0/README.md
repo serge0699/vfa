@@ -94,7 +94,7 @@ e0a228ac13c11ac0
 12f806fda3ea30be
 ```
 
-Пример с комментариями: [`src/test/rand_width.sv`](./src/test/rand_width.sv).
+Пример с комментариями: [`src/test/rand_width.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/rand_width.sv).
 
 Запуск примера в QuestaSim:
 
@@ -170,7 +170,7 @@ efbeaddefecadefa
 
 Подробнее об indexed part-select можно узнать в стандарте SystemVerilog IEEE Std 1800-2023 в разделе 11.5.1.
 
-Пример с комментариями: [`src/test/data_packing.sv`](./src/test/data_packing.sv).
+Пример с комментариями: [`src/test/data_packing.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/data_packing.sv).
 
 Запуск примера в QuestaSim:
 
@@ -236,7 +236,7 @@ Process 5
 
 Оказывается, что **`disable fork` завершает все дочерние процессы вызывающего `disable fork` процесса**. То есть в нашем случае все процессы, созданные в `initial`, в том числе процессы, которые были созданы при вызове задачи `run_processes()`, так как она вызывалась в этом `initial`.
 
-Пример с комментариями: [`src/test/disable_fork.sv`](./src/test/disable_fork.sv).
+Пример с комментариями: [`src/test/disable_fork.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/disable_fork.sv).
 
 Запуск примера в QuestaSim:
 
@@ -344,7 +344,7 @@ end
 
 Если знакорасширенное значение `data` на совпадает со значением `data_o` (о чем автор любезно позаботился, сломав модуль), то генерируется пользовательская ошибка. У читателя может возникнуть вопрос: что за конструкции языка `$past(data_i, 1)` и `$sampled(data_o)`? Не забегайте вперед! Дайте автору начать чуть издалека...
 
-Пример с комментариями: [`src/test/sva_event_regions.sv`](./src/test/sva_event_regions.sv).
+Пример с комментариями: [`src/test/sva_event_regions.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/sva_event_regions.sv).
 
 Запуск примера в QuestaSim в режиме GUI:
 
@@ -422,7 +422,7 @@ end
 #    Time: 75 ns Started: 65 ns  Scope: sva_event_regions.apData
 ```
 
-Интересно! Значение `data_o` в выводе изменилось на `7fffffc6`, которое соответствует результату для значения `data_i`, равного `c6`. Но, зная теорию из [раздела выше](#о-systemveriog-event-regions), мы можем объяснить такое певедение симулятора. Ведь выполнение ветви `else` происходит в Reactive регионе, после обновление выхода `data_o` в NBA регионе. Соответственно значение `data_o` для вывода берется уже обновленное! 
+Интересно! Значение `data_o` в выводе изменилось на `7fffffc6`, которое соответствует результату для значения `data_i`, равного `c6`. Но, зная теорию из [раздела выше](#О-systemveriog-event-regions), мы можем объяснить такое певедение симулятора. Ведь выполнение ветви `else` происходит в Reactive регионе, после обновление выхода `data_o` в NBA регионе. Соответственно значение `data_o` для вывода берется уже обновленное! 
 
 Так какую же роль играет системная функция `$sampled()`. Не трудно догадаться — функция возвращает значение переменной в Preponed регионе. То значение, которое было использовано при в проверке в concurrent assertion. Такие значения в контексте assertions в стандарте SystemVerilog называются сэмплированными (англ. sampled).
 
@@ -533,7 +533,7 @@ Process 1
 
 Такой результат обсусловлен тем, что процесс `$display("Process 1")` по стандарту должен начать выполняться в момент когда родительский `initial` начнет выполнять блокирующее выражение или завершится. В примере все `$display()` после `join_none` не являются блокирующими выражениями. Родительский `initial` завершится, после чего процесс в `fork_join_none` начнет свое выполнение. То есть вывод `Process 1` будет сделан после всех остальных выводов в примере.
 
-Пример с комментариями: [`src/test/fork_join_none.sv`](./src/test/fork_join_none.sv).
+Пример с комментариями: [`src/test/fork_join_none.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/fork_join_none.sv).
 
 Запуск примера в QuestaSim:
 
@@ -622,7 +622,7 @@ wait fork;
 
 Все последовательности запускаются совместно через `fork-join_none` для полноценной нагрузки межсоединения со стороны различных функциональных блоков. `i`-ая последовательность запускается на `i`-ом агенте.
 
-Пример с комментариями: [`src/test/fork_join_seqs.sv`](./src/test/fork_join_seqs.sv).
+Пример с комментариями: [`src/test/fork_join_seqs.sv`](https://github.com/serge0699/vfa/blob/master/articles/gotchas_0/src/test/fork_join_seqs.sv).
 
 Запуск примера в QuestaSim:
 
