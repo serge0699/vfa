@@ -115,7 +115,7 @@ package icon_dv_pkg;
     // каждая их которых запускается на соответ-
     // ствующем ей sequencer из agent.
     //
-    // Обратите внимание на ~automatic int j = i~.
+    // Обратите внимание на ~int j = i~.
     // Создание данной переменной необходимо, так
     // как выполнение ~seq[j].start(ag[j].sqr)~
     // произойдет совместно с выполнением wait fork
@@ -163,7 +163,8 @@ package icon_dv_pkg;
             end
             foreach(seq[i]) begin
                 fork
-                    seq[i].start(ag[i].sqr);
+                    int j = i;
+                    seq[j].start(ag[j].sqr);
                 join_none
             end
             wait fork;
