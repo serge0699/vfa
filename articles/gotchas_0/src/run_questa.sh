@@ -8,5 +8,5 @@ fi
 
 # Запуск симуляции.
 mkdir -p ./out/questa
-vlog ./test/$1.sv -work ./out/work -l ./out/questa/compile.log
+vlog ./test/$1.sv -work ./out/work -l ./out/questa/compile.log && \
 vsim $1 "${args[@]}" -do "run -a; ${quit}" -work ./out/work -l ./out/questa/sim.log
