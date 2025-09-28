@@ -79,7 +79,7 @@ package icon_dv_pkg;
     endclass
 
     // Агент для работы с интерконнектом. Инкапсулирует
-    // sequencer и driver. Monitor в данном примере
+    // секвенсер и драйвер. Монитор в данном примере
     // не используется.
 
     class icon_agent extends uvm_agent;
