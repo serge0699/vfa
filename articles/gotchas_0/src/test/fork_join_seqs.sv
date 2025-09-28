@@ -1,13 +1,13 @@
 // SystemVerilog Gotchas, Tips and Tricks, часть 1.
 
-// Совместный запуск sequence на множестве агентов.
+// Совместный запуск последовательностей на множестве агентов.
 
 package icon_dv_pkg;
 
     import uvm_pkg::*;
     `include "uvm_macros.svh"
 
-    // Sequence item для работы с интерконнектом.
+    // Элемент последовательности для работы с интерконнектом.
 
     class icon_seq_item extends uvm_sequence_item;
 
@@ -28,7 +28,7 @@ package icon_dv_pkg;
 
     endclass
 
-    // Sequence для работы с интерконнектом.
+    // Последовательность для работы с интерконнектом.
 
     class icon_seq extends uvm_sequence#(icon_seq_item);
 
@@ -49,11 +49,11 @@ package icon_dv_pkg;
 
     endclass
 
-    // Sequencer для работы с интерконнектом.
+    // Секвенсер для работы с интерконнектом.
 
     typedef uvm_sequencer#(icon_seq_item) icon_sequencer;
 
-    // Driver для работы с интерконнектом.
+    // Драйвер для работы с интерконнектом.
     // В данном примере получает транзакцию и со
     // случайной задержкой информирует о ее завер-
     // шении. Не взаимодействует с интерфейсом.
@@ -78,7 +78,7 @@ package icon_dv_pkg;
 
     endclass
 
-    // Agent для работы с интерконнектом. Инкапсулирует
+    // Агент для работы с интерконнектом. Инкапсулирует
     // sequencer и driver. Monitor в данном примере
     // не используется.
 
