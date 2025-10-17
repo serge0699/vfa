@@ -186,6 +186,13 @@ efbeaddefecadefa
 
 На момент написания статьи Verilator (v5.035) некорректно определяет очередность данных для упаковки при помощи streaming operator. Автор создал [issue](https://github.com/verilator/verilator/issues/5903).
 
+**UPD 17.10.25:** Issue был успешно закрыт, исправления попали в ветку `master`. Протестировано на версии `5.040 2025-08-30 rev v5.040`.
+
+Запуск примера в Verilator:
+
+```bash
+./run_verilator.sh data_packing
+```
 
 ## Завершение потоков через disable fork
 
