@@ -9,3 +9,4 @@
 - [Demystifying UVM: Фабрика, часть 1.](articles/uvm_factory_0)
 - [Demystifying UVM: Фабрика, часть 2.](articles/uvm_factory_1)
 - [SystemVerilog Gotchas, Tips and Tricks, часть 1.](articles/gotchas_0)
+- [SystemVerilog Gotchas, Tips and Tricks, часть 2.](articles/gotchas_1)
