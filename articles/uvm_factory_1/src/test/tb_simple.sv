@@ -20,7 +20,7 @@ module tb_simple;
         // Результатом вывода будет:
         // | # Hello from 'base_test' type!
         $display("\n0. No override:");
-        test = base_test::type_id::create("test", null);
+        test = base_test::type_id::create("test_0", null);
         test.print();
 
         // Создание компонента типа ~extended_test_1~, кото-
@@ -36,7 +36,7 @@ module tb_simple;
         // | # Hello from 'extended_test_1' type!
         // | # Hello world!
         $display("\n1. Upcast 'base_test' to 'extended_test_1:");
-        test = extended_test_1::type_id::create("test", null);
+        test = extended_test_1::type_id::create("test_1", null);
         test.print();
 
         // Производится переопределение типа ~base_test~ на тип
@@ -53,7 +53,7 @@ module tb_simple;
         // | # Hello world!
         $display("\n2. Override 'base_test' to 'extended_test_1':");
         base_test::type_id::set_type_override(extended_test_1::get_type());
-        test = base_test::type_id::create("test", null);
+        test = base_test::type_id::create("test_2", null);
         test.print();
 
         // Производится переопределение типа ~base_test~ на тип
@@ -68,7 +68,7 @@ module tb_simple;
         // метод ~set_type_override_by_type()~.
         $display("\n3. Override 'base_test' to 'extended_test_2':");
         base_test::type_id::set_type_override(extended_test_2::get_type());
-        test = base_test::type_id::create("test", null);
+        test = base_test::type_id::create("test_3", null);
         test.print();
 
         // Производится переопределение типа ~extended_test_2~
@@ -84,7 +84,7 @@ module tb_simple;
         // ~find_override_by_type()~.
         $display("\n4. Override 'extended_test_2' to 'extended_test_1':");
         extended_test_2::type_id::set_type_override(extended_test_1::get_type());
-        test = base_test::type_id::create("test", null);
+        test = base_test::type_id::create("test_4", null);
         test.print();
 
         $finish();
