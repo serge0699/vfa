@@ -397,4 +397,4 @@ endclass
 Всего вам наилучшего, дорогие читатели! Мира и процветания!☀️
 
 [^1]: Siemens QuestaSim, Cadence Xcelium, Synopsys VCS. Что интересно: UVM 1.2 единственная версия UVM, которая [поддерживается встроенным симулятором Xilinx Vivado](https://adaptivesupport.amd.com/s/question/0D52E00006iHj9gSAC/difference-between-standard-uvm-12-and-xlnxuvmpkg?language=en_US).
-[^2]: [Ссылка](https://dvtalk.me/2021/09/03/singleton-class-in-systemverilog/) на отличную статью о singleton-классах в SystemVerilog.
+[^2]: [Ссылка](https://sagar5258.blogspot.com/2016/04/singleton-class-in-system-verilog.html) на статью о singleton-классах в SystemVerilog.
