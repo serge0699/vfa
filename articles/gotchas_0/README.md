@@ -736,6 +736,18 @@ wait fork;
 
 Во всех вызовах `seq[j].start(ag[j].sqr)` переменная `j` будет принимать соответственно значения `0`, `1` и `2`, что приведет к корректному запуску последовательностей на агентах.
 
+Альтернативным вариантом является создание автоматической переменной в начале цикла и до запуска `fork-join_none`:
+
+```verilog
+foreach(seq[i]) begin
+    automatic int j = i;
+    fork
+        seq[j].start(ag[j].sqr);
+    join_none
+end
+wait fork;
+```
+
 ## To be continued...
 
 Первая часть цикла SystemVerilog Gotchas, Tips and Tricks подошла к концу, дорогие читатели. Следите за обновлениями в Telegram-канале автора [Verification For All (VFA)](https://t.me/verif_for_all)!
