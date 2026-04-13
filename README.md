@@ -12,3 +12,4 @@
 - [Demystifying UVM: Фабрика, часть 2.](./articles/uvm_factory_1/README.md)
 - [SystemVerilog Gotchas, Tips and Tricks, часть 1.](./articles/gotchas_0/README.md)
 - [SystemVerilog Gotchas, Tips and Tricks, часть 2.](./articles/gotchas_1/README.md)
+- [SystemVerilog Gotchas, Tips and Tricks, часть 3.](./articles/gotchas_2/README.md)
