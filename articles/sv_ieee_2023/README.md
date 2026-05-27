@@ -248,6 +248,7 @@ module test;
     function my_class get_my_class();
         my_class cl;
         cl = new();
+        return c1;
     endfunction
     initial begin
         get_my_class().print();
