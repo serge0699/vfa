@@ -1,4 +1,11 @@
-<a href="https://t.me/verif_for_all"><img src="common/vfa.svg" align="center"></a>
+<p align="center">
+  <a href="https://t.me/verif_for_all">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="common/vfa_dark.gif">
+      <img src="common/vfa_light.gif" alt="Verification For All" width="66%">
+    </picture>
+  </a>
+</p>
 
 Приветствую тебя, дорогой единомышленник! В данном репозитории содержатся исходные файлы статей Telegram-канала [Verification For All](https://t.me/verif_for_all).
 
