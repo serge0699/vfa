@@ -492,11 +492,11 @@ endclass
 Для запуска примера при помощи QuestaSim или Verilator в директории [`src`](https://github.com/serge0699/vfa/tree/master/articles/uvm_factory_1/src) необходимо выполнить скрипты `run_questa.sh` и `run_verilator.sh` соответственно (с аргументом `tb_simple`):
 
 ```bash
-run_questa.sh tb_simple
+./run_questa.sh tb_simple
 ```
 
 ```bash
-run_verilator.sh tb_simple
+./run_verilator.sh tb_simple
 ```
 
 Лог запуска будет выведен в консоль, а артефакты симуляции сохранены в директорию `src/out`.
