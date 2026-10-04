@@ -364,7 +364,7 @@ package race_free_scb_pkg;
 
         virtual function void connect_phase(uvm_phase phase);
             foreach(ae_r[i]) ae_r[i].connect(afifo_r[i].analysis_export);
-            foreach(ae_r[i]) ae_e[i].connect(afifo_e[i].analysis_export);
+            foreach(ae_e[i]) ae_e[i].connect(afifo_e[i].analysis_export);
         endfunction
 
         // Запуск параллельных циклов обработки FIFO.
@@ -534,7 +534,7 @@ package race_free_scb_pkg;
         endfunction
 
         // В данном примере последовательностей не запускается.
-        // Фаза длится 1000ns, позволяя мониторам генерировать
+        // Фаза длится 100ns, позволяя мониторам генерировать
         // транзакции, а табло их обрабатывать. 
 
         virtual task main_phase(uvm_phase phase);

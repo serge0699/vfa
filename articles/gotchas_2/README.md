@@ -1461,7 +1461,7 @@ class icon_comparator extends uvm_component;
 
     virtual function void connect_phase(uvm_phase phase);
         foreach(ae_r[i]) ae_r[i].connect(afifo_r[i].analysis_export);
-        foreach(ae_r[i]) ae_e[i].connect(afifo_e[i].analysis_export);
+        foreach(ae_e[i]) ae_e[i].connect(afifo_e[i].analysis_export);
     endfunction
 
     // Запуск параллельных циклов обработки FIFO.
