@@ -58,9 +58,9 @@ package test_pkg;
     // который вызывает сначала реализацию
     // родительского класса, а потом выводит
     // "Hello world!". Результатом вызова будет:
-    // | # Hello from 'extended_test_1' type!
+    // | # Hello from 'extended_test_2' type!
     // | # Hello world!
-    // | # Another hello world!!
+    // | # Another hello world!
     class extended_test_2 extends extended_test_1;
 
         `uvm_component_utils(extended_test_2)
