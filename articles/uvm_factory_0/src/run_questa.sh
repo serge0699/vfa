@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p ./out/questa
 vlog ./test/test_pkg.sv ./test/$1.sv \
     -work ./out/work -l ./out/questa/compile.log

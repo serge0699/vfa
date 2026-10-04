@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Переменные.
 out=./out/verilator
 uvm="--depth 1 --branch uvm-1.2 https://github.com/chipsalliance/uvm-verilator.git"

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p ./out/questa
 vlog ./uvm/sc_uvm_pkg.sv ./test/test_pkg.sv ./test/$1.sv \
     +incdir+./uvm/ -work ./out/work -l ./out/questa/compile.log

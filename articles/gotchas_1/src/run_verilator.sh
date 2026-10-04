@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Выходная директория.
 mkdir -p ./out/verilator
 
