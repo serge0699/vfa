@@ -551,7 +551,7 @@ class sequencer extends uvm_sequencer#(seq_item);
             set_arbitration(UVM_SEQ_ARB_WEIGHTED);
         end
         random_cnt++;
-        return avail_sequences[avail_sequences[avail_sequences.size()-1]];
+        return avail_sequences[avail_sequences.size()-1];
     endfunction
     ...
 endclass
